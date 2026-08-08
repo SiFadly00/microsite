@@ -2,24 +2,20 @@
 
 @section('content')
 <div class="max-w-7xl mx-auto">
-    
-    <!-- Header Dashboard -->
-    <div class="mb-8 flex items-center justify-between">
+    <div class="mb-8 flex items-center justify-between gap-4">
         <div>
-            <h1 class="text-3xl font-black text-slate-900 tracking-tight">Dashboard Analytics</h1>
-            <p class="text-slate-600 font-bold mt-1">Ringkasan performa tautan Bio-Link Anda.</p>
+            <p class="text-xs font-black uppercase tracking-[0.3em] text-orange-700">Analytics</p>
+            <h1 class="text-3xl font-black text-slate-900 tracking-tight mt-2">Dashboard Nusa Brew</h1>
+            <p class="text-slate-600 font-bold mt-1">Ringkasan performa tautan dan penjualan digital Anda.</p>
         </div>
-        <a href="{{ route('admin.links.index') }}" class="hidden sm:flex bg-white hover:bg-slate-50 text-slate-900 font-black py-2.5 px-5 rounded-xl border-4 border-slate-900 shadow-[4px_4px_0px_0px_#0f172a] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all items-center gap-2">
+        <a href="{{ route('admin.links.index') }}" class="hidden sm:flex bg-white hover:bg-orange-50 text-slate-900 font-black py-2.5 px-5 rounded-xl border-4 border-slate-900 shadow-[4px_4px_0px_0px_#0f172a] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all items-center gap-2">
             Kelola Tautan <i data-lucide="arrow-right" class="w-5 h-5 stroke-[3]"></i>
         </a>
     </div>
 
-    <!-- 1. SUMMARY CARDS -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        
-        <!-- Card: Total Tautan -->
-        <div class="bg-blue-200 border-4 border-slate-900 rounded-3xl p-6 shadow-[6px_6px_0px_0px_#0f172a] relative overflow-hidden group hover:-translate-y-1 transition-transform">
-            <i data-lucide="link" class="w-20 h-20 text-blue-300 absolute -bottom-4 -right-4 stroke-[3] group-hover:scale-110 transition-transform"></i>
+        <div class="bg-gradient-to-br from-orange-200 to-amber-200 border-4 border-slate-900 rounded-3xl p-6 shadow-[6px_6px_0px_0px_#0f172a] relative overflow-hidden group hover:-translate-y-1 transition-transform">
+            <i data-lucide="link-2" class="w-20 h-20 text-orange-300 absolute -bottom-4 -right-4 stroke-[3] group-hover:scale-110 transition-transform"></i>
             <h3 class="text-sm font-black text-slate-700 uppercase tracking-widest mb-2 relative z-10">Total Tautan</h3>
             <div class="flex items-baseline gap-2 relative z-10">
                 <span class="text-5xl font-black text-slate-900">{{ $totalLinks }}</span>
@@ -27,16 +23,14 @@
             </div>
         </div>
 
-        <!-- Card: Total Klik -->
-        <div class="bg-emerald-200 border-4 border-slate-900 rounded-3xl p-6 shadow-[6px_6px_0px_0px_#0f172a] relative overflow-hidden group hover:-translate-y-1 transition-transform">
+        <div class="bg-gradient-to-br from-emerald-200 to-lime-200 border-4 border-slate-900 rounded-3xl p-6 shadow-[6px_6px_0px_0px_#0f172a] relative overflow-hidden group hover:-translate-y-1 transition-transform">
             <i data-lucide="mouse-pointer-click" class="w-20 h-20 text-emerald-300 absolute -bottom-4 -right-4 stroke-[3] group-hover:scale-110 transition-transform"></i>
-            <h3 class="text-sm font-black text-slate-700 uppercase tracking-widest mb-2 relative z-10">Total Akses Seluruh Tautan</h3>
+            <h3 class="text-sm font-black text-slate-700 uppercase tracking-widest mb-2 relative z-10">Total Akses</h3>
             <span class="text-5xl font-black text-slate-900 relative z-10">{{ $totalClicks }}</span>
         </div>
 
-        <!-- Card: Top Link -->
-        <div class="bg-amber-200 border-4 border-slate-900 rounded-3xl p-6 shadow-[6px_6px_0px_0px_#0f172a] relative overflow-hidden group hover:-translate-y-1 transition-transform">
-            <i data-lucide="trophy" class="w-20 h-20 text-amber-300 absolute -bottom-4 -right-4 stroke-[3] group-hover:scale-110 transition-transform"></i>
+        <div class="bg-gradient-to-br from-yellow-200 to-amber-200 border-4 border-slate-900 rounded-3xl p-6 shadow-[6px_6px_0px_0px_#0f172a] relative overflow-hidden group hover:-translate-y-1 transition-transform">
+            <i data-lucide="trophy" class="w-20 h-20 text-yellow-300 absolute -bottom-4 -right-4 stroke-[3] group-hover:scale-110 transition-transform"></i>
             <h3 class="text-sm font-black text-slate-700 uppercase tracking-widest mb-2 relative z-10">Tautan Terpopuler</h3>
             @if($topLink)
                 <p class="text-xl font-black text-slate-900 relative z-10 truncate mb-1">{{ $topLink->title }}</p>
@@ -45,55 +39,37 @@
                 <p class="text-xl font-black text-slate-900 relative z-10">Belum ada data</p>
             @endif
         </div>
-
     </div>
 
-    <!-- 2 & 3. CHARTS AREA -->
-<!-- 2 & 3. CHARTS AREA -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
-        
-        <!-- Bar Chart (Top 5 Links) -->
-        <div class="bg-white border-4 border-slate-900 rounded-3xl p-6 shadow-[6px_6px_0px_0px_#0f172a] flex flex-col">
+        <div class="bg-white/90 border-4 border-slate-900 rounded-3xl p-6 shadow-[6px_6px_0px_0px_#0f172a] flex flex-col">
             <h3 class="text-lg font-black text-slate-900 border-b-4 border-slate-900 pb-3 mb-6 uppercase tracking-wider">Perbandingan Klik (Top 5)</h3>
-            
-            <!-- PERBAIKAN: Bungkus canvas dengan div relative dan h-72 -->
             <div class="relative w-full h-72">
                 <canvas id="barChart"></canvas>
             </div>
         </div>
 
-        <!-- Doughnut Chart (Distribusi Minat) -->
-        <div class="bg-white border-4 border-slate-900 rounded-3xl p-6 shadow-[6px_6px_0px_0px_#0f172a] flex flex-col">
+        <div class="bg-white/90 border-4 border-slate-900 rounded-3xl p-6 shadow-[6px_6px_0px_0px_#0f172a] flex flex-col">
             <h3 class="text-lg font-black text-slate-900 border-b-4 border-slate-900 pb-3 mb-6 uppercase tracking-wider">Distribusi Minat Audiens</h3>
-            
-            <!-- PERBAIKAN: Bungkus canvas dengan div relative dan h-72 -->
             <div class="relative w-full h-72 flex justify-center items-center">
                 <canvas id="doughnutChart"></canvas>
             </div>
         </div>
-
     </div>
 </div>
 
-<!-- ========================================== -->
-<!-- SCRIPT CHART.JS NEO BRUTALISM STYLE        -->
-<!-- ========================================== -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    // Menyuntikkan Data PHP ke JavaScript
     const chartLabels = @json($chartLabels);
     const chartData = @json($chartData);
 
-    // Palet Warna Neo-Brutalism (Biru, Hijau, Kuning, Merah, Ungu muda)
-    const bgColors = ['#bfdbfe', '#a7f3d0', '#fde68a', '#fecdd3', '#e9d5ff'];
-    const borderColors = ['#0f172a', '#0f172a', '#0f172a', '#0f172a', '#0f172a']; // Border slate-900
+    const bgColors = ['#fdba74', '#fbbf24', '#fca5a5', '#86efac', '#c4b5fd'];
+    const borderColors = ['#0f172a', '#0f172a', '#0f172a', '#0f172a', '#0f172a'];
 
-    // Konfigurasi Global Font
     Chart.defaults.font.family = 'Inter, sans-serif';
     Chart.defaults.font.weight = 'bold';
     Chart.defaults.color = '#0f172a';
 
-    // 1. BAR CHART INISIALISASI
     const ctxBar = document.getElementById('barChart').getContext('2d');
     new Chart(ctxBar, {
         type: 'bar',
@@ -115,19 +91,14 @@
                 y: {
                     beginAtZero: true,
                     ticks: { precision: 0 },
-                    grid: { color: '#e2e8f0', lineWidth: 2, borderDash: [5, 5] } // Grid putus-putus
+                    grid: { color: '#f1f5f9', lineWidth: 2, borderDash: [5, 5] }
                 },
-                x: {
-                    grid: { display: false }
-                }
+                x: { grid: { display: false } }
             },
-            plugins: {
-                legend: { display: false } // Sembunyikan legenda agar lebih bersih
-            }
+            plugins: { legend: { display: false } }
         }
     });
 
-    // 2. DOUGHNUT CHART INISIALISASI
     const ctxDoughnut = document.getElementById('doughnutChart').getContext('2d');
     new Chart(ctxDoughnut, {
         type: 'doughnut',
@@ -144,9 +115,7 @@
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            plugins: {
-                legend: { position: 'right' } // Posisikan nama-nama link di kanan lingkaran
-            }
+            plugins: { legend: { position: 'right' } }
         }
     });
 </script>

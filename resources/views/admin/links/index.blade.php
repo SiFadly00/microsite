@@ -19,7 +19,7 @@
             </div>
             <!-- Perubahan elemen button menjadi tag anchor (a) -->
             <a href="{{ route('admin.links.create') }}"
-                class="w-full sm:w-auto bg-blue-400 hover:bg-blue-300 text-slate-950 font-extrabold py-2.5 sm:py-3 px-6 rounded-xl sm:rounded-2xl border-2 border-slate-900 shadow-[3px_3px_0px_0px_#0f172a] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all flex items-center justify-center gap-2">
+                class="w-full sm:w-auto bg-gradient-to-r from-amber-300 to-orange-300 hover:from-amber-200 hover:to-orange-200 text-slate-950 font-extrabold py-2.5 sm:py-3 px-6 rounded-xl sm:rounded-2xl border-2 border-slate-900 shadow-[3px_3px_0px_0px_#0f172a] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all flex items-center justify-center gap-2">
                 <i data-lucide="plus" class="w-5 h-5 stroke-[2.5]"></i>
                 Tambah Link Baru
             </a>

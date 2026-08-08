@@ -42,7 +42,7 @@
 
         <div class="mt-6 flex items-center justify-center gap-3">
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="flex h-11 w-11 items-center justify-center rounded-full border-2 border-slate-900 bg-white shadow-[3px_3px_0px_0px_#0f172a] transition hover:-translate-y-0.5">
-                <i data-lucide="instagram" class="h-5 w-5"></i>
+                <i data-lucide="camera" class="h-5 w-5"></i>
             </a>
             <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="flex h-11 w-11 items-center justify-center rounded-full border-2 border-slate-900 bg-emerald-200 shadow-[3px_3px_0px_0px_#0f172a] transition hover:-translate-y-0.5">
                 <i data-lucide="message-circle" class="h-5 w-5"></i>

@@ -27,8 +27,8 @@
             <!-- Field 1: Judul Tautan -->
             <div class="space-y-2">
                 <label for="title" class="block text-sm font-extrabold text-slate-900">Judul Tautan <span class="text-rose-500">*</span></label>
-                <input type="text" id="title" name="title" value="{{ old('title') }}" placeholder="Contoh: Portofolio Dribbble" required
-                       class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-900 rounded-xl focus:outline-none focus:ring-4 focus:ring-blue-500/20 font-medium">
+                <input type="text" id="title" name="title" value="{{ old('title') }}" placeholder="Contoh: Menu Kopi Signature" required
+                       class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-900 rounded-xl focus:outline-none focus:ring-4 focus:ring-amber-500/20 font-medium">
                 @error('title')
                     <p class="text-xs font-bold text-rose-600 flex items-center gap-1 mt-1">
                         <i data-lucide="circle-alert" class="w-3.5 h-3.5"></i> {{ $message }}
@@ -39,8 +39,8 @@
             <!-- Field 2: URL Tujuan -->
             <div class="space-y-2">
                 <label for="url" class="block text-sm font-extrabold text-slate-900">URL Tujuan <span class="text-rose-500">*</span></label>
-                <input type="url" id="url" name="url" value="{{ old('url') }}" placeholder="https://dribbble.com/username" required
-                       class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-900 rounded-xl focus:outline-none focus:ring-4 focus:ring-blue-500/20 font-medium">
+                <input type="url" id="url" name="url" value="{{ old('url') }}" placeholder="https://wa.me/6281234567890" required
+                       class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-900 rounded-xl focus:outline-none focus:ring-4 focus:ring-amber-500/20 font-medium">
                 @error('url')
                     <p class="text-xs font-bold text-rose-600 flex items-center gap-1 mt-1">
                         <i data-lucide="circle-alert" class="w-3.5 h-3.5"></i> {{ $message }}
@@ -109,7 +109,7 @@
                 <a href="{{ route('admin.links.index') }}" class="bg-slate-100 hover:bg-slate-200 text-slate-900 font-extrabold py-3 px-6 rounded-xl border-2 border-slate-900 shadow-[3px_3px_0px_0px_#0f172a]">
                     Batal
                 </a>
-                <button type="submit" class="bg-blue-400 hover:bg-blue-300 text-slate-950 font-extrabold py-3 px-8 rounded-xl border-2 border-slate-900 shadow-[3px_3px_0px_0px_#0f172a] flex items-center gap-2">
+                <button type="submit" class="bg-gradient-to-r from-amber-300 to-orange-300 hover:from-amber-200 hover:to-orange-200 text-slate-950 font-extrabold py-3 px-8 rounded-xl border-2 border-slate-900 shadow-[3px_3px_0px_0px_#0f172a] flex items-center gap-2">
                     <i data-lucide="check" class="w-5 h-5 stroke-[2.5]"></i> Simpan Data
                 </button>
             </div>
